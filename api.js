@@ -14,8 +14,10 @@ let router = express.Router();
 let port = 1337;
 
 let RoomRoutes = require('./routes/room-routes');
+let MarkerRoutes = require('./../routes/marker-routes');
 
 let roomRoutes = new RoomRoutes(router);
+let markerRoutes = new MarkerRoutes(router);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -24,6 +26,12 @@ app.use('/api', router);
 
 roomRoutes.createRoom();
 roomRoutes.getRoomDetails();
+roomRoutes.joinRoom();
+roomRoutes.updateRoomDetails();
+
+markerRoutes.createMarker();
+markerRoutes.deleteMarker();
+markerRoutes.updateMarker();
 
 app.listen(port);
 
