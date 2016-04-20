@@ -18,7 +18,6 @@ let MarkerSchema = new Schema({
     _id: { type: String, index: true, required: true, unique: true, dropDups: true, validate: [] },
     timestamp: { type: Date, index: true, required: true, unique: false, dropDups: false, validate: [] },
     text: { type: String, index: false, required: false, unique: false, dropDups: false, validate: [validators.isLength(1, 500)] },
-    room: { type: String, ref: 'Rooms' },
     author: { type: String, ref: 'Users' }
 });
 
