@@ -1,0 +1,39 @@
+{
+  "name": "argon-music-json-api",
+  "version": "0.0.1",
+  "description": "A music service for every soul to enjoy.",
+  "license": "CC0-1.0",
+  "author": "Ivo Huntjens",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon dist/server.js"
+  },
+  "dependencies": {
+    "koa": "^1.2.0",
+    "koa-routing": "^1.3.1",
+    "moment": "^2.13.0",
+    "mongoose": "^4.4.15",
+    "mongoose-validators": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.7.7",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-node5": "^11.1.0",
+    "babel-register": "^6.8.0",
+    "del": "^2.2.0",
+    "eslint": "^2.9.0",
+    "eslint-config-standard": "^5.3.1",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-changed": "^1.3.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "nodemon": "^1.9.2",
+    "run-sequence": "^1.1.5"
+  }
+}
