@@ -1,7 +1,10 @@
+import mongoose from 'mongoose';
+
 import {KoaServer} from './rest/koa-server';
 
 import {RoomRoutes} from './routes/room-routes';
 
+import {database} from './connection/connection-strings';
 import {baseURL, port} from './values/connection';
 
 class Server {
@@ -9,7 +12,15 @@ class Server {
 		this.server = new KoaServer(baseURL, port);
 	}
 
+	accept() {
+		mongoose.connect(database);
+
+		this.server.listen();
+	}
+
 	close() {
+		mongoose.disconnect();
+
 		this.server.close();
 	}
 
@@ -21,17 +32,14 @@ class Server {
 		});
 
 		this.server.addPostRequest('/rooms', RoomRoutes.addRoom());
-		this.server.addPutRequest('/rooms/:room_id/close', RoomRoutes.closeRoom());
-	}
 
-	listen() {
-		this.server.listen();
+		this.server.addPutRequest('/rooms/:room_id/close', RoomRoutes.closeRoom());
 	}
 }
 
 let server = new Server();
 
 server.init();
-server.listen();
+server.accept();
 
 process.on('exit', () => server.close());
