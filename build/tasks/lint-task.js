@@ -1,9 +1,10 @@
 import eslint from 'gulp-eslint';
+import eslintConfig from './../../.eslintrc';
 import gulp from 'gulp';
 
-import eslintConfig from './../../.eslintrc';
-import {paths} from './../paths';
 import {Task} from './../task';
+
+import {paths} from './../paths';
 
 export class LintTask extends Task {
     static task() {

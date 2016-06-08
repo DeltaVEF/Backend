@@ -4,8 +4,9 @@ import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
 
-import {paths} from './../paths';
 import {Task} from './../task';
+
+import {paths} from './../paths';
 
 export class BabelTask extends Task {
     static task() {

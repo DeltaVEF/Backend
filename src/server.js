@@ -4,7 +4,7 @@ import {KoaServer} from './rest/koa-server';
 
 import {RoomRoutes} from './routes/room-routes';
 
-import {database} from './connection/connection-strings';
+import {connectionStrings} from './connection/connection-strings';
 import {baseURL, port} from './values/connection';
 
 class Server {
@@ -13,7 +13,7 @@ class Server {
 	}
 
 	accept() {
-		mongoose.connect(database);
+		mongoose.connect(connectionStrings.mongodb);
 
 		this.server.listen();
 	}

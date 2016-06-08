@@ -14,20 +14,16 @@ class GulpTask {
         gulp.task('del', DeleteTask.task);
         gulp.task('lint', LintTask.task);
         gulp.task('nodemon', NodemonTask.task);
+		gulp.task('watchFiles', GulpTask.watch);
     }
 
     static watch() {
-        gulp.watch(paths.source, ['babel', 'lint']);
+        gulp.watch([paths.source, paths.jsonSource], ['babel', 'json', 'lint']);
     }
 }
 
 GulpTask.init();
 
 gulp.task('clean', ['del']);
-gulp.task('default', runSequence('del', 'babel', 'lint'));
-gulp.task('watch', runSequence('del', 'nodemon', GulpTask.watch));
-
-//gulp.task('clean', DeleteTask.task);
-//gulp.task('default', runSequence('del', 'babel', ['lint', 'nodemon']));
-//gulp.task('build', runSequence(DeleteTask.task, BabelTask.task, LintTask.task));
-//gulp.task('watch', runSequence(DeleteTask.task, GulpTask.watch));
+gulp.task('watch', (callback) => runSequence('del', 'watchFiles', 'nodemon'));
+gulp.task('build', (callback) => runSequence('del', 'babel'));

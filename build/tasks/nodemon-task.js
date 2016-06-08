@@ -1,7 +1,8 @@
 import nodemon from 'gulp-nodemon';
 
-import {paths} from './../paths';
 import {Task} from './../task';
+
+import {paths} from './../paths';
 
 export class NodemonTask extends Task {
     static task() {

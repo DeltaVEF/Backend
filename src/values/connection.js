@@ -1,2 +1,2 @@
 export let baseURL = '/api';
-export let port = 8080;
+export let port = 80;

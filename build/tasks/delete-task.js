@@ -1,7 +1,8 @@
 import del from 'del';
 
-import {paths} from './../paths';
 import {Task} from './../task';
+
+import {paths} from './../paths';
 
 export class DeleteTask extends Task {
     static task() {
