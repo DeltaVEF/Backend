@@ -1,0 +1,2 @@
+export let code = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+export let base64 = '012356789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
