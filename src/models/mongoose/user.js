@@ -14,9 +14,9 @@ let Schema = mongoose.Schema;
 */
 
 export let UserSchema = new Schema({
-	_id: { type: String, index: true, required: true, unique: true, dropDups: true, validate: [] },
-	firstName: { type: String, index: true, required: true, unique: false, dropDups: false, validate: [validators.isLength(1, 128)] },
-	lastName: { type: String, index: true, required: true, unique: false, dropDups: false, validate: [validators.isLength(1, 128)] }
+	_id: {type: String, index: true, required: true, unique: true, dropDups: true, validate: []},
+	firstName: {type: String, index: true, required: true, unique: false, dropDups: false, validate: [validators.isLength(1, 128)]},
+	lastName: {type: String, index: true, required: true, unique: false, dropDups: false, validate: [validators.isLength(1, 128)]}
 });
 
 export let UserModel = mongoose.model('Users', UserSchema);

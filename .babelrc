@@ -1,3 +1,9 @@
 {
-    "presets": ["node5"]
+    "presets": ["es2015", "node5"],
+	"plugins": [
+		["transform-runtime", {
+			"polyfill": false,
+			"regenerator": true
+		}]
+	]
 }

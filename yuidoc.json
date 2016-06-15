@@ -1,0 +1,9 @@
+{
+	"name": "The Argon Music API",
+    "description": "A music service for every soul to enjoy.",
+    "version": "0.0.1",
+    "url": "",
+    "options": {
+        "outdir": "./apidocs"
+    }
+}
